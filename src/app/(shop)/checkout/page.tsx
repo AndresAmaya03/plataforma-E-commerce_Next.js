@@ -57,9 +57,9 @@ export default function CartPage() {
 
             <h2 className="text-2xl mb-2">Shipping Address</h2>
             <div className="mb-10">
-            <p>Pancho Hernandez</p>
-            <p>15th Street 8975</p>
-            <p>Seattle, Washington</p>
+              <p>Pancho Hernandez</p>
+              <p>15th Street 8975</p>
+              <p>Seattle, Washington</p>
             </div>
 
 
@@ -89,16 +89,16 @@ export default function CartPage() {
             <div className="mt-5 mb-2 w-full">
               {/* Disclaimer */}
               <p className="mb-5">
-              <span className="text-xs">
-                By clicking on "Place Order", you agree to our <a href="#" className="underline">terms and conditions</a> and <a href="#" className="underline">privacy policies</a>
-              </span>
+                <span className="text-xs">
+                  By clicking on "Place Order", you agree to our <a href="#" className="underline">terms and conditions</a> and <a href="#" className="underline">privacy policies</a>
+                </span>
               </p>
 
-            <Link 
-            className="flex btn-primary justify-center"
-            href="/orders/123">
-            Place Order
-            </Link>
+              <Link
+                className="flex btn-primary justify-center"
+                href="/orders/123">
+                Place Order
+              </Link>
             </div>
 
 
