@@ -1,9 +1,5 @@
 import { initialData } from "./seed"
 import prisma from '../lib/prisma';
-import { create } from 'zustand';
-import { IMAGES_MANIFEST } from "next/dist/shared/lib/constants";
-import Image from 'next/image';
-import { A } from "ollama/dist/shared/ollama.6319775f";
 
 interface Abc {
 
