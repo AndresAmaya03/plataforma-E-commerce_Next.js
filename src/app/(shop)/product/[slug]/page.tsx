@@ -1,8 +1,10 @@
-import { ProductMobileSlideShow, ProductSlideShow, QuantitySelector, SizeSelector } from "@/components";
+export const revalidate = 604800; //reload de cache cada 7 dias
+
+import { ProductMobileSlideShow, ProductSlideShow, QuantitySelector, SizeSelector, StockLabel } from "@/components";
 import { titleFont } from "@/config/font";
-import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
-import { Title } from '../../../../components/ui/title/Title';
+import { getProductBySlug } from "@/actions";
+import { Metadata, ResolvingMetadata } from "next";
 
 interface Props {
   params: {
@@ -10,9 +12,33 @@ interface Props {
   }
 }
 
-export default function ProductPage({ params }: Props) {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const slug = (await params).slug
+
+  // fetch data
+  const product = await getProductBySlug(slug)
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+
+  return {
+    title: product?.title ?? 'Product not found',
+    description: product?.description ?? '',
+    openGraph: {
+      title: product?.title ?? 'Product not found',
+      description: product?.description ?? '',
+      images: [ `/products/${product?.images[1]}`],
+    },
+  }
+}
+
+export default async function ProductPage({ params }: Props) {
   const { slug } = params
-  const product = initialData.products.find(product => product.slug === slug)
+  const product = await getProductBySlug(slug)
 
   if (!product) {
     notFound()
@@ -40,6 +66,7 @@ export default function ProductPage({ params }: Props) {
 
       {/* Details */}
       <div className="col-span-1 px-5">
+        <StockLabel slug={product.slug} />
         <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>
           {product.title}
         </h1>

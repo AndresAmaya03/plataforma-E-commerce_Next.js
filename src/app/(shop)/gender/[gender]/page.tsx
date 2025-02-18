@@ -19,7 +19,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
   const page = searchParams.page ? parseInt(searchParams.page) : 1
 
-  const { products, currentPage, totalPages } = await getPaginationProductWithImages({ page, gender: gender as Gender })
+  const { products, totalPages } = await getPaginationProductWithImages({ page, gender: gender as Gender })
 
 
   if (products.length === 0) {

@@ -5,7 +5,10 @@ import { geistSans, geistMono } from "@/config/font";
 
 
 export const metadata: Metadata = {
-  title: "E-commerce page",
+  title: {
+    template: '%s - Platform-Shop',
+    default: 'Home - Platform-Shop'
+  },
   description: "An e-commerce shop for different products",
 };
 
