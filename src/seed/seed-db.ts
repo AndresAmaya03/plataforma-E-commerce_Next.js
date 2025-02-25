@@ -8,11 +8,17 @@ interface Abc {
 async function main() {
 
     //Delete previous data
+    await prisma.user.deleteMany(),
     await prisma.productImage.deleteMany(),
     await prisma.product.deleteMany(),
     await prisma.category.deleteMany()
 
-    const { categories, products } = initialData
+    const { categories, products, users } = initialData
+
+    //users
+    await prisma.user.createMany({
+        data: users
+    })
 
     //categories
     const categoriesData = categories.map(category => ({
