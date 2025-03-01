@@ -1,10 +1,6 @@
 import { initialData } from "./seed"
 import prisma from '../lib/prisma';
 
-interface Abc {
-
-}
-
 async function main() {
 
     //Delete previous data

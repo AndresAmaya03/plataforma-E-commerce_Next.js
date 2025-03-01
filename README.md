@@ -2,8 +2,8 @@
 
 ## How to run this project on dev
 
-* 1. Clone the repository
-* 2. Create a copy of ```.env.template```, rename it to ```.env``` and change the enviroment variables.
+* 1.- Clone the repository
+* 2.- Create a copy of ```.env.template```, rename it to ```.env``` and change the enviroment variables.
 * 3.- Install dependencies with ```npm install```
 * 4.- Get the database up with ```docker-compose up -d```
 * 5.- Run Prisma migrations with ```npx prisma migrate dev```
