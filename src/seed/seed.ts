@@ -1,4 +1,5 @@
 import bcryptjs from 'bcryptjs'
+import { countries } from './seed-countries';
 
 interface SeedProduct {
     description: string;
