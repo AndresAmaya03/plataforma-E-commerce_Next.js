@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
-import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicket, IoTicketOutline } from 'react-icons/io5'
+import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from 'react-icons/io5'
 
 export const Sidebar = () => {
 

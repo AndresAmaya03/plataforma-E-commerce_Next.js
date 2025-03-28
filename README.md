@@ -8,7 +8,7 @@
 * 4.- Get the database up with ```docker-compose up -d```
 * 5.- Run Prisma migrations with ```npx prisma migrate dev```
 * 6.- Excecute seed with ```npm run seed```
-* 7.- Clean the browser's Local Storage
-* 8.- Run the project with ```npm run dev```
+* 7.- Run the project with ```npm run dev```
+* 8.- Clean the browser's Local Storage
 
 ## How to make a production version

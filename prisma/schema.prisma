@@ -123,6 +123,8 @@ model Order {
   userId       String        @unique
   OrderItem    OrderItem[]
   OrderAddress OrderAddress?
+
+  transactionId String?
 }
 
 model OrderItem {
